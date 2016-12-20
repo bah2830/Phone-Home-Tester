@@ -39,6 +39,7 @@ while ($row = $allRequests->fetchArray()) {
                     <table class="table table-hover">
                         <thead>
                             <tr>
+                                <th>&nbsp;</th>
                                 <th>Hostname</th>
                                 <th>Ip Address</th>
                                 <th>Operating System</th>
@@ -48,8 +49,9 @@ while ($row = $allRequests->fetchArray()) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($requests as $host): ?>
+                            <?php foreach ($requests as $i => $host): ?>
                                 <tr>
+                                    <td><?=($i + 1)?></td>
                                     <td><?=$host['hostname']?></td>
                                     <td><?=$host['ip_address']?></td>
                                     <td><?=$host['os']?></td>
